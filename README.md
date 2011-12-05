@@ -34,6 +34,14 @@ See:
 
 ## Change log
 
+Mon, 05 Dec 2011 17:39:23 -0500 
+### Cleanup and minor changes in prep for custom code changes
+
+- In progress (not ready to run scripts from this version yet)
+- Remove canonical README.txt
+- Change git ignore to exclude private folders and Eclipse IDE settings
+
+
 Mon, 05 Dec 2011 17:27:26 -0500 
 ### Check fresh canonical Drupal Quickstart code
 

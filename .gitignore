@@ -1,5 +1,17 @@
+# From original project. Will likely remove.
 quickstart-install.log
 quickstart-size-end.txt
 quickstart-size-slim.txt
 quickstart-size-start.txt
 quickstart-slim-package-list.txt
+
+# Ignore anything in a private folder
+*/private
+
+# Ignore Eclipse IDE info
+.buildpath
+.project
+.settings
+
+# Mac stuff
+*.DS_Store
