@@ -14,8 +14,18 @@ sudo apt-get -yq remove --purge libreoffice-core libreoffice-common libreoffice-
        libreoffice-base-core  libreoffice-impress libreoffice-math libreoffice-gtk libreoffice-l10n-common libreoffice-gnome \
        libreoffice-emailmerge 
 sudo apt-get -yq remove --purge language-support-writing-en language-support-en uno-libs3 ure
+
+# Add back in the removal of Open office for LTS version
+# 362mb - Open office
+sudo apt-get -yq remove --purge openoffice.org-core openoffice.org-common openoffice.org-writer openoffice.org-calc openoffice.org-math \
+     openoffice.org-impress openoffice.org-base-core openoffice.org-draw openoffice.org-emailmerge openoffice.org-gnome openoffice.org-gtk \
+     openoffice.org-help-en-gb openoffice.org-help-en-us openoffice.org-l10n-en-gb openoffice.org-l10n-en-za openoffice.org-style-human \
+     openoffice.org-thesaurus-en-au python-uno language-support-writing-en openoffice.org-thesaurus-en-us openoffice.org-hyphenation \
+     openoffice.org-hyphenation-en-us openoffice.org-l10n-common language-support-en uno-libs3 ure
+
+
 #  18mb - Games
-sudo apt-get -yq remove --purge gbrainy aisleriot gnomine gnome-mahjongg gnome-sudoku
+sudo apt-get -yq remove --purge gbrainy aisleriot gnomine gnome-mahjongg gnome-sudoku quadrapassel 
 #  12mb - Accessability
 sudo apt-get -yq remove --purge gnome-orca gnome-mag brltty brltty-x11 onboard                                           
 #   9mb - Screen savers
@@ -27,7 +37,7 @@ sudo apt-get -yq remove --purge gnome-bluetooth bluez bluez-alsa bluez-gstreamer
 #  .3mb - Skype clone FIXME (9)
 sudo apt-get -yq remove --purge espeak                                                 
 #  23mb - Email FIXME (75)
-sudo apt-get -yq remove --purge evolution evolution-common evolution-data-server evolution-exchange evolution-indicator evolution-plugins evolution-webcal libevolution
+sudo apt-get -yq remove --purge evolution evolution-common evolution-data-server evolution-exchange evolution-indicator evolution-plugins evolution-webcal libevolution evolution-couchdb
 #   1mb - Spam filter
 sudo apt-get -yq remove --purge bogofilter bogofilter-bdb bogofilter-common                  
 #  63mb - Printing FIXME (98)
@@ -46,14 +56,14 @@ sudo apt-get -yq remove --purge shotwell
 sudo apt-get -yq remove --purge tomboy
 #  28mb - Mono .net layer
 sudo apt-get -yq remove --purge libart2.0-cil libgconf2.0-cil libglade2.0-cil libglib2.0-cil \
-  libgmime2.4-cil libgnome-vfs2.0-cil libgnome2.24-cil libgtk2.0-cil \
+  libgmime2.4-cil libgnome-vfs2.0-cil libgnome2.24-cil libgtk2.0-cil libgnomepanel2.24-cil \
   liblaunchpad-integration1.0-cil libmono-addins-gui0.2-cil libmono-addins0.2-cil libmono-cairo2.0-cil \
   libmono-corlib2.0-cil libmono-i18n-west2.0-cil libmono-posix2.0-cil \
   libmono-security2.0-cil libmono-sharpzip2.84-cil libmono-system2.0-cil \
   libndesk-dbus-glib1.0-cil libndesk-dbus1.0-cil mono-2.0-gac mono-gac mono-runtime
   # don't include ubuntu-mono, or light-themes will go too (ambiance and clearlooks)
 #   8mb - Fancy GUI Compiz (FIXME 15)
-sudo apt-get -yq remove --purge compiz compiz-core compiz-gnome compiz-plugins compizconfig-backend-gconf libcompizconfig0 libdecoration0 
+sudo apt-get -yq remove --purge compiz compiz-core compiz-gnome compiz-plugins compizconfig-backend-gconf libcompizconfig0 libdecoration0 compiz-fusion-plugins-main 
 #   6mb - Example videos and stuff
 sudo apt-get -yq remove --purge example-content
 #  43mb - Video drivers
@@ -77,10 +87,10 @@ sudo apt-get -yq remove --purge gwibber gwibber-service telepathy-gabble libtele
 #   2mb - video editor
 sudo apt-get -yq remove --purge pitivi
 #   5mb - Etc
-sudo apt-get -yq remove --purge usb-creator-gtk checkbox-gtk ubuntuone-client-gnome jockey-gtk computer-janitor-gtk
+sudo apt-get -yq remove --purge usb-creator-gtk checkbox-gtk ubuntuone-client-gnome jockey-gtk computer-janitor-gtk byobu gnome-dictionary
 #   2mb - Etc Etc
 sudo apt-get -yq remove --purge xserver-xorg-input-all xserver-xorg-input-synaptics xserver-xorg-input-wacom #touchpad .5mb
-sudo apt-get -yq remove --purge nvidia-96-modaliases nvidia-173-modaliases # graphics card detection .1mb
+sudo apt-get -yq remove --purge nvidia-96-modaliases nvidia-173-modaliases nvidia-180-modaliases # graphics card detection .1mb
 sudo apt-get -yq remove --purge eog #graphic viewer 1.6mb
 
 # 0mb
