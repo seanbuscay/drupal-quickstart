@@ -47,6 +47,28 @@ See:
 
 5. Where possible, changes to the original project are done via tweak scripts and not directly in the original code.
 
+## Install
+
+### quickstart as your user
+
+__This is the default Quickstart setup and is safe only for a secure local VM or secure local server.__
+
+1. On your Ubuntu Server/VM, add the user "quickstart" with the password "quickstart" and make sure the user has sudo privileges.
+
+    * The easiest way it to just use "quickstart" as the user and password during the Ubuntu install process
+
+2. Log in as the "quickstart" user.
+
+3. Run:
+
+        sudo apt-get -y install git-core
+        git clone git@github.com:seanbuscay/drupal-quickstart-LTS.git quickstart
+        bash ~/quickstart/install-quickstart.sh
+
+    * During the scripted process, use "quickstart" for all passwords
+
+    * At the end of the scripted process, a text file will open with some instructions for manual configuration
+
 ## File List
 
 1. export-prep.sh
