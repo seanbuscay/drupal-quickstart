@@ -25,51 +25,138 @@ See:
 
 ## About this Fork
 
-- This project is really a personal fork, which may have changes that other Drupal developers might find useful for incorporating into their own custom Drupal Quickstart Environment.  
+1. This project is really a personal fork, which may have changes that other Drupal developers might find useful for incorporating into their own custom Drupal Quickstart Environment.  
 
-- This fork just focuses on the Long-term Support (LTS) version of Ubuntu.
- --The thinking here is that many of the servers we deploy to maintain and use this version of Ubuntu.  
- --Currently the LTS version of Ubuntu is 10.04.
+2. This fork just focuses on the Long-term Support (LTS) version of Ubuntu.
+
+    * The thinking here is that many of the servers we deploy to maintain and use this version of Ubuntu.
     
-- This fork does not provide a pre-built downloadable version of the project.  It provides the collection of scripts used by developers to build their own version of Drupal Quickstart.
+    * Currently the LTS version of Ubuntu is 10.04.
+    
+3. This fork does not provide a pre-built downloadable version of the project.  
 
-- This fork may deprecate or ignore certain parts of the canonical Drupal Quickstart scripts which target VirtualBox.
- --It will still build on VirtualBox, but will also build on other VMs as well as on any server with Ubuntu 10.04 installed on it.
- --It will likely build on other versions of Ubuntu and in other distros too.
- --It just targets Ubuntu 10.04 first and is not interested in maintaining support for anything else.
+    * It provides the collection of scripts used by developers to build their own version of Drupal Quickstart.
+
+4. This fork may deprecate or ignore certain parts of the canonical Drupal Quickstart scripts which target VirtualBox.
+
+    * It will still build on VirtualBox, and other VMs as well as on any server with Ubuntu 10.04 installed on it.
+    
+    * It will likely build on other versions of Ubuntu and in other distros too.
+    
+    * It just targets Ubuntu 10.04 first and is not interested in maintaining support for anything else.
+
+5. Where possible, changes to the original project are done via tweak scripts and not directly in the original code.
 
 ## File List
 
 1. export-prep.sh
- -- Good to use to free up space before exporting and sharing VM
- -- Not changed from original project
+
+    * Good to use to free up space before exporting and sharing VM
+    
+    * __Not changed from original project__
 
 2. install-quickstart.sh
- -- Not changed from original project
+
+    * __Not changed from original project__
 
 3. install-quickstart-server.sh
- -- Just a wrapper script to run ~/quickstart/quickstart-3-lamp.sh
- -- Not changed from original project
+
+    * Just a wrapper script to run ~/quickstart/quickstart-3-lamp.sh
+    
+    * __Not changed from original project__
     
 4. quickstart-1a-guest.sh
- -- Not used in this fork
- -- VirtualBox specific - good to use to if using VirtualBox
- -- Not changed from original project
+
+    * Not used in this fork
+    
+    * VirtualBox specific - good to use to if using VirtualBox
+    
+    * __Not changed from original project__
 
 5. quickstart-1-prep.sh 
- -- Add quickstart user to sudoers file - if this does not work, you need to do this manually
- -- Also tweaks Ubuntu to turn off screen saver and login sound
- -- Not changed from original project
+
+    * Add quickstart user to sudoers file - if this does not work, you need to do this manually
+
+    * Also tweaks Ubuntu to turn off screen saver and login sound
+
+    * __Not changed from original project__
 
 6. quickstart-2a-update.sh
- -- Update and upgrade to the latest in the 10.04x branch (or whatever branch you are on)
- -- Not changed from original project
+
+    * Update and upgrade to the latest in the 10.04x branch (or whatever branch you are on)
+
+    * __Not changed from original project__
 
 7. quickstart-2-slim.sh
- -- Added back in the removal of Open office for LTS version
- 
+
+    * Added back in the removal of Open office for LTS version
+
+8. quickstart-3-lamp.sh
+
+    * The awesome script that sets up the server environment.
+    
+    * Though this file is not changed from the original, a tweak file is provided to change it.
+    
+    * __Not changed from original project__
+
+9. quickstart-4-ides.sh
+
+    * Installs and configures IDEs, graphical version control, and misc. tools.
+    
+    * __Not changed from original project__
+    
+10. quickstart-5-browsers.sh
+
+    * Installs Firefox and Google Chrome
+    
+    * Tweaked this file from the original to not have to go through the manual Firefox profile setup
+    
+    * Make Chrome the default browser instead of Firefox
+    
+11. quickstart-6-devenv.sh
+
+    * Sets up Dev environment.
+    
+    * This file will be changed.  Probably via tweak scripts.
+    
+    * __Not changed from original project__
+    
+12. quickstart-7-config.sh
+
+    * Configure changes to Ubuntu and misc. tools.
+    
+    * Just leave in for now "Remove new 3d-glasses scrollbars" though not needed for LTS
+    
+    * __Not changed from original project__
+
+13. quickstart-8-manualconfig.sh
+
+    * Run an initial site setup example for:
+    
+        * D7 - 
+          
+            drush qc --domain=example.dev
+        
+        * D6 -
+        
+            drush qc --domain=example6.dev --makefile=d6.make
+            
+    * Open the manual configuration text.
+    
+    * __Not changed from original project__
+    
+14.  quickstart-8-manualconfig.txt
+
+    * Directions for manual configuration steps. 
+    
+    * __Not changed from original project__
 
 ## Change log
+
+Mon, 05 Dec 2011 21:02:42 -0500 
+### Change quickstart-5-browsers.sh
+- Tweaked this file from the original to not have to go through the manual Firefox profile setup
+- Make Chrome the default instead
 
 Mon, 05 Dec 2011 19:52:29 -0500 
 ### Adjust quickstart-2-slim.sh for LTS Version
