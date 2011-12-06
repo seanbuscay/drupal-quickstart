@@ -61,7 +61,7 @@ See:
 
 Mon, 05 Dec 2011 19:52:29 -0500 
 ### Adjust quickstart-2-slim.sh for LTS Version
-- Added back in the removal of Open office for LTS version
+- Add back in the removal of Open office for LTS version
 - Slim a additional games and drivers
 
 Mon, 05 Dec 2011 17:39:23 -0500 
