@@ -27,46 +27,46 @@ See:
 
 - This project is really a personal fork, which may have changes that other Drupal developers might find useful for incorporating into their own custom Drupal Quickstart Environment.  
 
-- This fork just focuses on the Long-term Support (LTS) version of Ubuntu. 
-    --The thinking here is that many of the servers we deploy to maintain and use this version of Ubuntu.  
-    --Currently the LTS version of Ubuntu is 10.04.
+- This fork just focuses on the Long-term Support (LTS) version of Ubuntu.
+ --The thinking here is that many of the servers we deploy to maintain and use this version of Ubuntu.  
+ --Currently the LTS version of Ubuntu is 10.04.
     
 - This fork does not provide a pre-built downloadable version of the project.  It provides the collection of scripts used by developers to build their own version of Drupal Quickstart.
 
 - This fork may deprecate or ignore certain parts of the canonical Drupal Quickstart scripts which target VirtualBox.
-   --It will still build on VirtualBox, but will also build on other VMs as well as on any server with Ubuntu 10.04 installed on it.
-   --It will likely build on other versions of Ubuntu and in other distros too.
-   --It just targets Ubuntu 10.04 first and is not interested in maintaining support for anything else.
+ --It will still build on VirtualBox, but will also build on other VMs as well as on any server with Ubuntu 10.04 installed on it.
+ --It will likely build on other versions of Ubuntu and in other distros too.
+ --It just targets Ubuntu 10.04 first and is not interested in maintaining support for anything else.
 
 ## File List
 
 1. export-prep.sh
-- Good to use to free up space before exporting and sharing VM
-- Not changed from original project
+ -- Good to use to free up space before exporting and sharing VM
+ -- Not changed from original project
 
 2. install-quickstart.sh
-- Not changed from original project
+ -- Not changed from original project
 
-3. install-quickstart-server.sh 
-- Just a wrapper script to run ~/quickstart/quickstart-3-lamp.sh
-- Not changed from original project
-
+3. install-quickstart-server.sh
+ -- Just a wrapper script to run ~/quickstart/quickstart-3-lamp.sh
+ -- Not changed from original project
+    
 4. quickstart-1a-guest.sh
-- Not used in this fork
-- VirtualBox specific - good to use to if using VirtualBox
-- Not changed from original project
+ -- Not used in this fork
+ -- VirtualBox specific - good to use to if using VirtualBox
+ -- Not changed from original project
 
 5. quickstart-1-prep.sh 
-- Add quickstart user to sudoers file - if this does not work, you need to do this manually
-- Also tweaks Ubuntu to turn off screen saver and login sound
-- Not changed from original project
+ -- Add quickstart user to sudoers file - if this does not work, you need to do this manually
+ -- Also tweaks Ubuntu to turn off screen saver and login sound
+ -- Not changed from original project
 
 6. quickstart-2a-update.sh
-- Update and upgrade to the latest in the 10.04x branch (or whatever branch you are on)
-- Not changed from original project
+ -- Update and upgrade to the latest in the 10.04x branch (or whatever branch you are on)
+ -- Not changed from original project
 
 7. quickstart-2-slim.sh
-- Added back in the removal of Open office for LTS version
+ -- Added back in the removal of Open office for LTS version
  
 
 ## Change log
