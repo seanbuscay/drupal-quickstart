@@ -119,7 +119,7 @@ __This is the default Quickstart setup and is safe only for a secure local VM or
     
     * Though this file is not changed from the original, a tweak file is provided to change it.
     
-    * __Not changed from original project__
+    * Changed to set mysql password via the initvars.sh file
 
 9. quickstart-4-ides.sh
 
@@ -174,6 +174,12 @@ __This is the default Quickstart setup and is safe only for a secure local VM or
     * __Not changed from original project__
 
 ## Change log
+
+## Add initvars.sh file
+- Able to set passwords from a central location
+
+## Change quickstart-3-lamp.sh
+- Set mysql password via the initvars.sh file
 
 Mon, 05 Dec 2011 21:02:42 -0500 
 ### Change quickstart-5-browsers.sh

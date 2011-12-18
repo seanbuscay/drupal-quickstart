@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./initvars.sh
+
 mkdir ~/websites
 
 
@@ -19,17 +21,17 @@ sudo apt-get -yq install wget curl
 # Define package names, and debconf config values.  Keep package names in sync.
 LAMP_APACHE="apache2 apache2-threaded-dev libapache2-mod-php5 libapache2-svn"
 LAMP_MYSQL="mysql-server-5.1"
-echo mysql-server-5.1 mysql-server/root_password        password quickstart | sudo debconf-set-selections
-echo mysql-server-5.1 mysql-server/root_password_again  password quickstart | sudo debconf-set-selections
+echo mysql-server-5.1 mysql-server/root_password        password ${QSPASS} | sudo debconf-set-selections
+echo mysql-server-5.1 mysql-server/root_password_again  password ${QSPASS} | sudo debconf-set-selections
 LAMP_PHP="php5 php5-dev php5-common php5-xsl php5-curl php5-gd php5-pgsql php5-cli php5-mcrypt php5-sqlite php5-mysql php-pear php5-imap php5-xdebug php-apc"
 LAMP_TOOLS="phpmyadmin"
 echo phpmyadmin       phpmyadmin/reconfigure-webserver  text     apache2    | sudo debconf-set-selections
 echo phpmyadmin       phpmyadmin/dbconfig-install       boolean  true       | sudo debconf-set-selections
-echo phpmyadmin       phpmyadmin/app-password-confirm   password quickstart | sudo debconf-set-selections
-echo phpmyadmin       phpmyadmin/mysql/admin-pass       password quickstart | sudo debconf-set-selections
-echo phpmyadmin       phpmyadmin/password-confirm       password quickstart | sudo debconf-set-selections
-echo phpmyadmin       phpmyadmin/setup-password         password quickstart | sudo debconf-set-selections
-echo phpmyadmin       phpmyadmin/mysql/app-pass         password quickstart | sudo debconf-set-selections
+\ | sudo debconf-set-selections
+echo phpmyadmin       phpmyadmin/mysql/admin-pass       password ${QSPASS} | sudo debconf-set-selections
+echo phpmyadmin       phpmyadmin/password-confirm       password ${QSPASS} | sudo debconf-set-selections
+echo phpmyadmin       phpmyadmin/setup-password         password ${QSPASS} | sudo debconf-set-selections
+echo phpmyadmin       phpmyadmin/mysql/app-pass         password ${QSPASS} | sudo debconf-set-selections
 
 # Now install the packages.  debconf shouldn't need to ask so many questions.
 sudo apt-get -yq install $LAMP_APACHE $LAMP_MYSQL $LAMP_PHP $LAMP_TOOLS
