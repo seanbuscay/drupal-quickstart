@@ -1,7 +1,6 @@
 #!/bin/bash
 
-DRUSH_VERSION="7.x-4.4"
-DRUSH_MAKE_VERSION="6.x-2.2"
+./initvars.sh
 
 cd ~
 
@@ -99,24 +98,6 @@ sudo chmod 755 /var/www/index.php
 
 # Don't sudo here...
 cat > ~/.bash_aliases <<END
-#   svn_add_all [folder]            - recursive add folders unversioned files (espects svn:ignore and spaces in filenames)
-#   svn_rid_all [folder]            - recursive svn-deletes missing files (deleted by user, but not svn-deleted)
-#   svn_revert_all [folder]         - recursive revert any change in folder
-#   svn_ignore [folder] [pattern]   - add pattern to folders svn:ignore property.  Use 's around wildcards.  E.g. '*' or '.*'
-#   svn_ignore_edit [folder]        - edit svn:ignore property
-svn_add_all    () { svn status "\$1" | grep '^?' | cut -b 8- | xargs -I {} svn add "{}"; }
-svn_trim_all   () { svn status "\$1" | grep '^!' | cut -b 8- | xargs -I {} svn rm "{}"; }
-svn_revert_all () { svn revert "\$1" -R; }
-svn_ignore     () { svn_prop_add ignore "\$1" "\$2"; }
-svn_external   () { svn_prop_add external "\$1" "\$2"; }
-svn_prop_add   () { FILE="\$RANDOM.svnprop"; svn propget svn:"\$1" "\$2" > \$FILE; echo "\$3" >> \$FILE;	
-			sed -i '/^\$/d' \$FILE; # remove blank lines
-			svn propset svn:"\$1" "\$2" -F $FILE; rm $FILE; }
-svn_prop_edit  () { svn pe svn:"\$2" "\$1"; }
-svn_svn_purge  () { find \$1 -type d -name .svn -exec rm -rf {} \; ; }
-svn_update     () { svn update \$@ --ignore-externals; }
-svn_commit     () { svn commit \$@; }
-
 # dereference links in current path.
 deref () { cd \$(pwd -P); }
 
@@ -137,6 +118,8 @@ END
 
 
 # ################################################################################ Desktop shortcuts
+
+if [ ${DESKTOP_SHORTCUTS} === TRUE ]; then
 
 cat > ~/Desktop/README.desktop <<END
 #!/usr/bin/env xdg-open
@@ -171,9 +154,11 @@ chmod 755 ~/Desktop/gnome-terminal.desktop
 ln -s ~/websites ~/Desktop/websites
 ln -s /mnt/vbox-shared ~/Desktop/vbox-shared
 
-
+fi
 
 # ################################################################################ Email catcher
+
+if [ ${EMAIL_CATCHER} === TRUE ]; then
 
 # Configure email collector
 mkdir /home/quickstart/websites/logs/mail
@@ -181,7 +166,7 @@ chmod -R 777 /home/quickstart/websites/logs/mail
 sudo sed -i 's/;sendmail_path =/sendmail_path=\/home\/quickstart\/quickstart\/config\/sendmail.php/g' /etc/php5/apache2/php.ini /etc/php5/cli/php.ini
 chmod +x /home/quickstart/quickstart/config/sendmail.php 
 
-
+fi
 
 # ################################################################################ XDebug Debugger/Profiler
 

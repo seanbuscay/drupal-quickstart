@@ -1,3 +1,9 @@
 #!/bin/bash
 
-QSPASS=quickstart
+QS_PASS=quickstart
+
+DRUSH_VERSION="7.x-4.4"
+DRUSH_MAKE_VERSION="6.x-2.2"
+
+DESKTOP_SHORTCUTS=TRUE
+EMAIL_CATCHER=TRUE
