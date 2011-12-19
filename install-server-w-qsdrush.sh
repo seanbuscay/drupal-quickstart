@@ -17,18 +17,15 @@
 cd ~
 
 
-# add to sudoers file - careful, this line could brick the box.
+# add to sudoers file - try to add only what is needed
 
-# change to only include whatis needed
+echo "quickstart ALL=(ALL) NOPASSWD: /usr/sbin/apache2ctl" | sudo tee -a /etc/sudoers > /dev/null 
+echo "quickstart ALL=(ALL) NOPASSWD: /usr/sbin/a2ensite" | sudo tee -a /etc/sudoers > /dev/null 
+echo "quickstart ALL=(ALL) NOPASSWD: /usr/sbin/a2dissite" | sudo tee -a /etc/sudoers > /dev/null 
 
-echo "quickstart ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null 
+# Hold off for now on whether we really need to grant nopassword to all actions.
 
-# bash -x ~/quickstart/quickstart-1-prep.sh
-# bash -x ~/quickstart/quickstart-2-slim.sh
+# echo "quickstart ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers > /dev/null 
+
 bash -x ~/quickstart/quickstart-3-lamp.sh
-# bash -x ~/quickstart/quickstart-4-ides.sh
-# bash -x ~/quickstart/quickstart-5-browsers.sh
-# bash -x ~/quickstart/quickstart-6-devenv.sh
-# bash -x ~/quickstart/quickstart-7-config.sh
-# firefox ~/quickstart/quickstart-8-manualconfig.txt
-
+bash -x ~/quickstart/quickstart-6-devenv.sh 
