@@ -62,7 +62,7 @@ __This is the default Quickstart setup and is safe only for a secure local VM or
 3. Run:
 
         sudo apt-get -y install git-core
-        git clone git@github.com:seanbuscay/drupal-quickstart-LTS.git quickstart
+        git clone git@github.com:seanbuscay/drupal-quickstart.git quickstart
         bash ~/quickstart/install-quickstart.sh
 
     * During the scripted process, use "quickstart" for all passwords
