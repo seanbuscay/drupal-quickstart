@@ -119,7 +119,7 @@ END
 
 # ################################################################################ Desktop shortcuts
 
-if [ ${DESKTOP_SHORTCUTS} === TRUE ]; then
+if [ ${DESKTOP_SHORTCUTS} ]; then
 
 cat > ~/Desktop/README.desktop <<END
 #!/usr/bin/env xdg-open
@@ -158,7 +158,7 @@ fi
 
 # ################################################################################ Email catcher
 
-if [ ${EMAIL_CATCHER} === TRUE ]; then
+if [ ${EMAIL_CATCHER} ]; then
 
 # Configure email collector
 mkdir /home/quickstart/websites/logs/mail
