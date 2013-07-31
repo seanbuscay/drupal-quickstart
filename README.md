@@ -2,6 +2,8 @@
 
 A minor fork of the Drupal Quickstart: Pre-made Development Environment with a focus on LTS Ubuntu and custom environment variables such as user name and password.
 
+NOTE: For a Pre-made Drupal Development Environment I recommend my more recent project @ https://github.com/seanbuscay/drupal-server .
+
 ## Canonical Drupal Quickstart
 
 The primary and canonical Drupal Quickstart project is located here: http://drupal.org/project/quickstart
